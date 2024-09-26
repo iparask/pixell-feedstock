@@ -1,5 +1,5 @@
 {% set name = "pixell" %}
-{% set version = "0.26.1" %}
+{% set version = "0.26.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pixell-{{ version }}.tar.gz
-  sha256: a84070dfdf3701563f9fc3ea1ec454d7b71351edddb62ff51df1180f05d72ec2
+  sha256: 8f807f338d1edd73b251346232029baf4bca1921ba78925c0778a9d568dc3c51
   patches:
     - qsort_const.patch
 
@@ -49,6 +49,7 @@ requirements:
     - pillow
     - pyfftw
     - libxcrypt1  # [linux]
+    - pip
   run:
     - llvm-openmp  # [osx]
     - libopenblas * *openmp*
@@ -56,6 +57,7 @@ requirements:
     - {{ pin_compatible("scipy") }}
     - matplotlib-base
     - python
+    - pip
     - coveralls
     - cython
     - ducc0

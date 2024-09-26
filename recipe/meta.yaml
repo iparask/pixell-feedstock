@@ -57,6 +57,7 @@ requirements:
     - {{ pin_compatible("scipy") }}
     - matplotlib-base
     - python
+    - pip
     - coveralls
     - cython
     - ducc0

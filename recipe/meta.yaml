@@ -16,7 +16,7 @@ build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps .
   script_env:
     - FFLAGS=-Wno-tabs -Wno-conversion -Wno-unused-variable
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -41,7 +41,7 @@ requirements:
     - cython
     - numpy <2.0
     - scipy
-    - astropy
+    - astropy-base
     - healpy
     - matplotlib-base
     - pyyaml
@@ -64,7 +64,7 @@ requirements:
     - numba
     - pytest
     - pytest-cov
-    - astropy
+    - astropy-base
     - healpy
     - pyyaml
     - h5py

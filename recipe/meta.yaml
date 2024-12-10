@@ -1,15 +1,14 @@
 {% set name = "pixell" %}
-{% set version = "0.26.2" %}
+{% set version = "0.27.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pixell-{{ version }}.tar.gz
-  sha256: 8f807f338d1edd73b251346232029baf4bca1921ba78925c0778a9d568dc3c51
-  patches:
-    - qsort_const.patch
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pixell-{{ version }}.tar.gz
+  sha256: 1c77ff57ffb2a0ff318de9b3c0e066d2ff404ee29b412a3ff5df576df76b78f8
+
 
 build:
   skip: true  # [py<39 or win]

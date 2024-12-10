@@ -8,8 +8,7 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pixell-{{ version }}.tar.gz
   sha256: 1c77ff57ffb2a0ff318de9b3c0e066d2ff404ee29b412a3ff5df576df76b78f8
-  patches:
-    - qsort_const.patch
+
 
 build:
   skip: true  # [py<39 or win]

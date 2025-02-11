@@ -15,7 +15,7 @@ build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps .
   script_env:
     - FFLAGS=-Wno-tabs -Wno-conversion -Wno-unused-variable
-  number: 1
+  number: 2
 
 requirements:
   build:

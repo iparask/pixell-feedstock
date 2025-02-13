@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pixell-{{ version }}.tar.gz
-  sha256: b0c00c427ba3397eedd2832a6e68bb8fa3de5eb908d239f40565434971ff34b7
+  sha256: 73c2725cb36338874f9b530998e7b650fdbe80fdfadbf2ae1e7927311a05ad87
 
 
 build:
@@ -15,7 +15,7 @@ build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps .
   script_env:
     - FFLAGS=-Wno-tabs -Wno-conversion -Wno-unused-variable
-  number: 1
+  number: 2
   
 
 requirements:

@@ -11,7 +11,7 @@ source:
 
 
 build:
-  skip: true  # [py<39 or win]
+  skip: true  # [py<39 or win or py>3.12]
   script: {{ PYTHON }} -m pip install . -vv --no-deps .
   script_env:
     - FFLAGS=-Wno-tabs -Wno-conversion -Wno-unused-variable
@@ -36,7 +36,7 @@ requirements:
     - libgomp  # [linux]
     - libopenblas * *openmp*
     - libblas * *openblas
-    - python <3.13
+    - python
     - meson-python
     - cython
     - numpy <2.0

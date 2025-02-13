@@ -11,11 +11,11 @@ source:
 
 
 build:
-  skip: true  # [py<39 or win or py>3.12]
+  skip: true  # [py<39 or win]
   script: {{ PYTHON }} -m pip install . -vv --no-deps .
   script_env:
     - FFLAGS=-Wno-tabs -Wno-conversion -Wno-unused-variable
-  number: 0
+  number: 1
   
 
 requirements:

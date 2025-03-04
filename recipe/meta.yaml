@@ -1,5 +1,5 @@
 {% set name = "pixell" %}
-{% set version = "0.28.0" %}
+{% set version = "0.28.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pixell-{{ version }}.tar.gz
-  sha256: 73c2725cb36338874f9b530998e7b650fdbe80fdfadbf2ae1e7927311a05ad87
+  sha256: ce2650b8479c340bde99308adc0001667544823fbef2840b13e6acd830b0e2e6
 
 
 build:
@@ -15,7 +15,7 @@ build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps .
   script_env:
     - FFLAGS=-Wno-tabs -Wno-conversion -Wno-unused-variable
-  number: 2
+  number: 0
   
 
 requirements:
@@ -39,7 +39,7 @@ requirements:
     - python
     - meson-python
     - cython
-    - numpy <2.0
+    - numpy >=1.26 # Allow NumPy 2+
     - scipy
     - astropy-base
     - healpy
@@ -54,7 +54,7 @@ requirements:
     - llvm-openmp  # [osx]
     - libopenblas * *openmp*
     - libblas * *openblas
-    - {{ pin_compatible("scipy") }}
+    - scipy
     - matplotlib-base
     - python
     - pip

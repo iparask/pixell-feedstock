@@ -39,7 +39,7 @@ requirements:
     - python
     - meson-python
     - cython
-    - numpy
+    - numpy >=1.26 # Allow NumPy 2+
     - scipy
     - astropy-base
     - healpy
@@ -54,7 +54,7 @@ requirements:
     - llvm-openmp  # [osx]
     - libopenblas * *openmp*
     - libblas * *openblas
-    - {{ pin_compatible("scipy") }}
+    - scipy
     - matplotlib-base
     - python
     - pip

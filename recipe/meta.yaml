@@ -1,5 +1,5 @@
 {% set name = "pixell" %}
-{% set version = "0.28.2" %}
+{% set version = "0.28.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pixell-{{ version }}.tar.gz
-  sha256: ce2650b8479c340bde99308adc0001667544823fbef2840b13e6acd830b0e2e6
+  sha256: 72a7fe3f8087047044e9bb4e5baa5f469fad1efee371047c03ec4b4267be46d7
 
 
 build:
@@ -16,7 +16,7 @@ build:
   script_env:
     - FFLAGS=-Wno-tabs -Wno-conversion -Wno-unused-variable
   number: 0
-  
+
 
 requirements:
   build:

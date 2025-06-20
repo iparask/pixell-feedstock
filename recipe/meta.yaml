@@ -39,7 +39,7 @@ requirements:
     - libgomp  # [linux]
     - libopenblas * *openmp*
     - libblas * *openblas
-    - python >-=3.9
+    - python
     - meson-python
     - cython
     - numpy >=1.26 # Allow NumPy 2+
@@ -53,13 +53,15 @@ requirements:
     - pyfftw
     - libxcrypt1  # [linux]
     - pip
+    - wheel
+    - setuptools
   run:
     - llvm-openmp  # [osx]
     - libopenblas * *openmp*
     - libblas * *openblas
     - scipy
     - matplotlib-base
-    - python >=3.9
+    - python
     - pip
     - coveralls
     - cython

@@ -12,11 +12,13 @@ source:
 
 build:
   skip: true  # [py<39 or win]
-  script: {{ PYTHON }} -m pip install . -vv --no-deps .
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   script_env:
     - FFLAGS=-Wno-tabs -Wno-conversion -Wno-unused-variable
-
-  number: 0
+  entry_points:
+    - benchmark-pixell-runner = pixell.scripts.benchmark_pixell_runner:main
+    - benchmark-pixell = pixell.scripts.benchmark_pixell:main
+  number: 1
 
 
 requirements:
@@ -51,6 +53,8 @@ requirements:
     - pyfftw
     - libxcrypt1  # [linux]
     - pip
+    - wheel
+    - setuptools
   run:
     - llvm-openmp  # [osx]
     - libopenblas * *openmp*
@@ -76,6 +80,10 @@ requirements:
 test:
   commands:
     - pip check
+    - benchmark-pixell-runner --help
+    - benchmark-pixell --help
+  requires:
+    - pip
   imports:
     - pixell
 

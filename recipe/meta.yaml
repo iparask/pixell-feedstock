@@ -75,6 +75,8 @@ requirements:
     - h5py
     - pillow !=10.4.0,>=5.3.0
     - pyfftw
+    - setuptools
+    - wheel
 
 
 test:

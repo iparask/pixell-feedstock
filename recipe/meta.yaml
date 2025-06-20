@@ -12,10 +12,13 @@ source:
 
 build:
   skip: true  # [py<39 or win]
-  script: {{ PYTHON }} -m pip install . -vv --no-deps .
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   script_env:
     - FFLAGS=-Wno-tabs -Wno-conversion -Wno-unused-variable
-  number: 0
+  entry_points:
+    - benchmark-pixell-runner = pixell.scripts.benchmark_pixell_runner:main
+    - benchmark-pixell = pixell.scripts.benchmark_pixell:main
+  number: 1
 
 
 requirements:
@@ -36,7 +39,7 @@ requirements:
     - libgomp  # [linux]
     - libopenblas * *openmp*
     - libblas * *openblas
-    - python
+    - python >-=3.9
     - meson-python
     - cython
     - numpy >=1.26 # Allow NumPy 2+
@@ -56,7 +59,7 @@ requirements:
     - libblas * *openblas
     - scipy
     - matplotlib-base
-    - python
+    - python >=3.9
     - pip
     - coveralls
     - cython
@@ -75,6 +78,10 @@ requirements:
 test:
   commands:
     - pip check
+    - benchmark-pixell-runner --help
+    - benchmark-pixell --help
+  requires:
+    - pip
   imports:
     - pixell
 

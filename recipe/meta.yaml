@@ -18,7 +18,7 @@ build:
   entry_points:
     - benchmark-pixell-runner = pixell.scripts.benchmark_pixell_runner:main
     - benchmark-pixell = pixell.scripts.benchmark_pixell:main
-  number: 1
+  number: 2
 
 
 requirements:
@@ -31,6 +31,7 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
     - {{ stdlib("c") }}
+    - ninja
     - llvm-openmp  # [osx]
     - libgomp  # [linux]
     - automake
